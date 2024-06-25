@@ -51,3 +51,15 @@
 {
     display: none;
 }
+.navbar .navbar-brand
+{
+    color: #E50914;
+    font-weight: bold;
+    display: flex;
+}
+
+.navbar-nav .nav-item .nav-link
+{
+    color: #E50914;
+}
+

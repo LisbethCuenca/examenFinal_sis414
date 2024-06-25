@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
     this.title.setTitle('Home - showtime');
     this.meta.updateTag({name:'description',content:'watch online movies'});
     
+    
+    
    }
 
   bannerResult: any = [];
@@ -24,6 +26,9 @@ export class HomeComponent implements OnInit {
   documentaryMovieResult: any = [];
   sciencefictionMovieResult: any = [];
   thrillerMovieResult: any = [];
+  navbg:any;
+  
+  
 
   ngOnInit(): void {
     this.bannerData();
