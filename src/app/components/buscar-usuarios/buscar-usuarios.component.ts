@@ -14,11 +14,12 @@ export class BuscarUsuariosComponent implements OnInit {
   busqueda: string = '';
   usuarioResaltado: any = null;
   nuevoUsuario: any = { nombre: '', email: '', uid: '' };
+  mensajeAgregado: boolean = false;
 
   constructor(
     private firestore: AngularFirestore,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.obtenerUsuarios();
@@ -90,7 +91,10 @@ export class BuscarUsuariosComponent implements OnInit {
         .then(() => {
           this.toastr.success('Usuario agregado correctamente');
           this.nuevoUsuario = { nombre: '', email: '', uid: '' };
-          this.obtenerUsuarios();
+          this.mensajeAgregado = true; // Mostrar mensaje de éxito
+          setTimeout(() => {
+            this.mensajeAgregado = false; // Ocultar mensaje después de unos segundos
+          }, 3000); // Ocultar después de 3 segundos
         })
         .catch((error) => this.toastr.error('Error al agregar usuario', error));
     } else {
@@ -98,3 +102,4 @@ export class BuscarUsuariosComponent implements OnInit {
     }
   }
 }
+

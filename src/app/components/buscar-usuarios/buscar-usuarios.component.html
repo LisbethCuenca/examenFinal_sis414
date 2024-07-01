@@ -1,14 +1,37 @@
 <div class="main">
     <div class="main">
-        <h3 class="title">WACHUKA MOVIES</h3>
-        <h5>Usuarios</h5>
+        <h2 class="title">WACHUKA MOVIES</h2>
+        <div class="main-2">
+            <h5>Agregar nuevo usuario</h5>
+            <form (ngSubmit)="agregarUsuario()" #formulario="ngForm" class="card">
+              <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="nuevoUsuario.nombre" required>
+              </div>
+              <div class="mb-3">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="form-control" [(ngModel)]="nuevoUsuario.email" required>
+              </div>
+              <div class="mb-3">
+                <label for="uid">UID</label>
+                <input type="text" id="uid" name="uid" class="form-control" [(ngModel)]="nuevoUsuario.uid" required>
+              </div>
+              <button type="submit" class="btn btn-sm btn-danger" style="width: 200px; justify-content: center; align-items: center; ">Agregar Usuario</button>
+            </form>
+            <div *ngIf="mensajeAgregado" class="alert alert-success mt-3">
+              Usuario agregado correctamente.
+            </div>
+            <h5>Buscar usuario</h5>
         <div class="search">
+            
             <input type="text" [(ngModel)]="busqueda" (input)="filtrarUsuarios()" placeholder="Buscar por nombre"
-                class="form-control" >
+                class="form-control" > 
             <button class="btn btn-sm btn-danger" type="button" (click)="buscar()">Buscar</button>
-            <a class="nav-link" routerLink="/agregar-usuario">Agregar Usuarios</a>
-        </div> <!-- list-group-item -->
+            <!-- <a class="nav-link" routerLink="/agregar-usuario">Agregar Usuarios</a> -->
+        </div>
+        
         <ul class="list-group">
+            <h5>Usuarios registrados</h5>
             <li class="card" *ngFor="let usuario of usuariosFiltrados">
                 <div>
                     <strong>Nombre:</strong> {{ usuario.nombre }}
@@ -33,26 +56,6 @@
         </ul>
     </div>
 
-    <!-- <div class="main-2">
-        <h5>Agregar Nuevo Usuario</h5>
-        <form (ngSubmit)="agregarUsuario()" #formulario="ngForm" class="card">
-            <div class="mb-3">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="nuevoUsuario.nombre"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" class="form-control" [(ngModel)]="nuevoUsuario.email"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="uid">UID</label>
-                <input type="text" id="uid" name="uid" class="form-control" [(ngModel)]="nuevoUsuario.uid" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Agregar Usuario</button>
-        </form>
-    </div>
-</div> -->
+    
 
 

@@ -1,0 +1,19 @@
+<div class="padre">
+    <ul class="list-group">
+        <h5>Usuarios registrados</h5>
+        <li class="card" *ngFor="let usuario of usuarios">
+            <div>
+                <strong>Nombre:</strong> {{ usuario.nombre }}
+            </div>
+            <div>
+                <strong>Email:</strong> {{ usuario.email }}
+            </div>
+            <div>
+                <strong>UID:</strong> {{ usuario.uid }}
+            </div>
+        </li>
+        <li *ngIf="usuarios.length === 0" class="list-group-item text-danger">
+            No se han encontrado usuarios
+        </li>
+    </ul>
+</div>

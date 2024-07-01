@@ -13,7 +13,7 @@ import { EditMovieComponent } from './movies-crud/edit-movie/edit-movie.componen
 import { CreateMovieComponent } from './movies-crud/create-movie/create-movie.component';
 import { MovieListComponent } from './movies-crud/movie-list/movie-list.component';
 import { BuscarUsuariosComponent } from './components/buscar-usuarios/buscar-usuarios.component';
-
+import { ObtenerUsuariosComponent } from './components/obtener-usuarios/obtener-usuarios.component'; 
 import * as path from 'path';
 import { AgregarUsuarioComponent } from './components/agregar-usuario/agregar-usuario.component';
 
@@ -35,7 +35,9 @@ const routes: Routes = [
   { path: 'create-movie', component: CreateMovieComponent },
   { path: 'movie-list', component: MovieListComponent},
   { path: 'buscar-usuarios', component: BuscarUsuariosComponent},
-  { path: 'agregar-usuario', component: AgregarUsuarioComponent}
+  { path: 'agregar-usuario', component: AgregarUsuarioComponent},
+  { path: 'obtener-usuarios', component: ObtenerUsuariosComponent}
+  
   
 ];
 

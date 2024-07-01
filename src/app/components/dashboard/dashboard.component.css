@@ -1,56 +1,118 @@
+.padre{
+  height: 100vh;
+  background-color: #3c3a3a;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: -300px; /* Inicialmente fuera de la pantalla */
+  width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out; /* Transición de movimiento */
+  z-index: 1000;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: black;
+}
+
+.title {
+  font-family: 'Impact', sans-serif;
+  color: #8b0000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  margin: 0%;
+  padding: 0%;
+  
+}
+
+.nav-link {
+  display: block;
+  color: #8b0000;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #dc3545; /* Cambia el color al pasar el mouse */
+}
+
+.navbar {
+  position: relative;
+  overflow: hidden; /* Oculta el overflow para mantener el card fuera de la vista */
+  height: 100vh;
+  
+}
+
+#navbar:hover #dashboardCard {
+  left: 0; /* Muestra el card al pasar el cursor sobre el navbar */
+}
+
+
 .container-fluid{
-    height: 100vh;
-    width: 100%;
-    background-color: rgb(234, 215, 217);
-
+  
 }
 
-/* .navbar .navbar-brand {
-    color: #E50914;
-    font-weight: bold;
-    display: flex;
-}
 
-.navbar-nav .nav-item .nav-link {
-    color: #E50914;
-    display: flex;
-} */
+.body {
+	text-align: center;
+	background-color: #ececec;
+	font-family: 'Helvetica', sans-serif;
+	}
 
-.navbar{
-    background-color: rgb(246, 40, 75);
-    height: 100vh;
-    display: flex;
-} */
-/* Estilos personalizados para la barra de navegación */
+/* Quitamos los margenes de los títulos tipo 2. Los de los distintos paneles */
+h2 {
+	margin: 0px;
+	}
 
-  
-  .navbar-brand {
-    font-size: 1.5rem; /* Tamaño de la fuente para el nombre de la aplicación */
-    height: 100vh;
-  }
-  
-  .navbar-nav {
-    margin-left: auto; /* Alinear elementos a la derecha */
-  }
-  
-  .nav-link {
-    color: #ffffff; /* Color del texto */
-    padding: 0.5rem 1rem; /* Espaciado interno */
-  }
-  
-  .nav-link:hover {
-    color: #f8f9fa; /* Color del texto al pasar el mouse */
-  }
-  
-  .navbar-toggler {
-    border-color: #ffffff; /* Color del borde del botón de alternancia */
-  }
-  .title {
-    font-family: 'Impact', sans-serif;
-    color: #8b0000;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 2px;
-    padding-bottom: 20px;
-    animation: swing 2s infinite alternate;
+/* Márgenes en auto para que quede centrado en la página.
+	Tamaño máximo de 920 píxeles.
+	configuración del grid a 3 columnas con un espaciado de 15 píxeles. */
+.dashboard-wrapper {
+	margin: auto;
+	max-width: 920px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+	}
 
-}
+/* Configuración de cada panel: texto alineado a la izquierda, color de fondo blanco, etc. */
+.dashboard-wrapper .panel {
+	text-align: left;
+	background-color: #fff;
+	border: 1px solid #d3d3d3;
+	box-shadow: 0 0 4px 1px rgba(143,143,143,.2);
+	padding: 15px;
+	}
+
+/* Los paneles con Id p1 y p5 ocuparan de la columna 1 a la 4 */
+.dashboard-wrapper #p1.panel, .dashboard-wrapper #p5.panel {
+	grid-column: 1 / 4;
+	}
+
+/* Configuración del footer */
+.bottom {
+	font-size: 10px;
+	margin-top: 15px;
+	}
+
+.bottom a {
+	color: #333;
+	text-decoration: none;
+	}
+
+/* Configuración responsive: para dispositivos con pantalla de máximo 104 píxeles de resolución. todos los paneles ocuparán de la columna 1 a la 4 */
+@media screen and (max-width: 1024px) {
+	.dashboard-wrapper .panel {
+		grid-column: 1 / 4;
+		}	
+	}
+
+

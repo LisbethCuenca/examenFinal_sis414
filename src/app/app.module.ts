@@ -30,6 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { BuscarUsuariosComponent } from './components/buscar-usuarios/buscar-usuarios.component';
 import { AgregarUsuarioComponent } from './components/agregar-usuario/agregar-usuario.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ObtenerUsuariosComponent } from './components/obtener-usuarios/obtener-usuarios.component';
+
 
 
 
@@ -52,7 +55,8 @@ import { AgregarUsuarioComponent } from './components/agregar-usuario/agregar-us
     EditMovieComponent,
     MovieDetailsComponent,
     BuscarUsuariosComponent,
-    AgregarUsuarioComponent
+    AgregarUsuarioComponent,
+    ObtenerUsuariosComponent
     
   ],
 
@@ -66,7 +70,9 @@ import { AgregarUsuarioComponent } from './components/agregar-usuario/agregar-us
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     FormsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FontAwesomeModule,
+    
     
   ],
   providers: [MovieApiServiceService],
