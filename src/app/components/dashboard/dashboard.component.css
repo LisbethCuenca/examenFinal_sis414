@@ -1,20 +1,56 @@
-.navbar .navbar-brand
-{
+.container-fluid{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(234, 215, 217);
+
+}
+
+/* .navbar .navbar-brand {
     color: #E50914;
     font-weight: bold;
     display: flex;
 }
 
-.navbar-nav .nav-item .nav-link
-{
+.navbar-nav .nav-item .nav-link {
     color: #E50914;
-}
+    display: flex;
+} */
 
-.body{
-    background-color: aliceblue;
-}
+.navbar{
+    background-color: rgb(246, 40, 75);
+    height: 100vh;
+    display: flex;
+} */
+/* Estilos personalizados para la barra de navegación */
 
-.collapse navbar-collapse{
-    color: #E50914;
-    background-color: aliceblue;
+  
+  .navbar-brand {
+    font-size: 1.5rem; /* Tamaño de la fuente para el nombre de la aplicación */
+    height: 100vh;
+  }
+  
+  .navbar-nav {
+    margin-left: auto; /* Alinear elementos a la derecha */
+  }
+  
+  .nav-link {
+    color: #ffffff; /* Color del texto */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+  }
+  
+  .nav-link:hover {
+    color: #f8f9fa; /* Color del texto al pasar el mouse */
+  }
+  
+  .navbar-toggler {
+    border-color: #ffffff; /* Color del borde del botón de alternancia */
+  }
+  .title {
+    font-family: 'Impact', sans-serif;
+    color: #8b0000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+    animation: swing 2s infinite alternate;
+
 }

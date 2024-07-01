@@ -1,0 +1,9 @@
+.container{
+    background-color: azure;
+    height: 100vh;
+}
+
+.smaller-image {
+    max-width: 150px; /* ajusta el tamaño máximo según tus necesidades */
+    height: auto; /* para mantener la proporción original */
+}

@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Listado de Películas</h2>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let movie of movies">
+            <div class="d-flex align-items-center">
+                <img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="{{ movie.title }}" class="mr-1 smaller-image">
+                <div>
+                    <h4>{{ movie.title }}</h4>
+                    <p>{{ movie.overview }}</p>
+                    <p>Géneros: {{ movie.genres.join(', ') }}</p>
+                    <button class="btn btn-primary">Ver Detalles</button>
+                    <button class="btn btn-warning">Editar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

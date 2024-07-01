@@ -8,27 +8,35 @@ import { RecuperarPasswordComponent } from './components/recuperar-password/recu
 import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'; 
 import { VerificarUsuarioComponent } from './components/verificar-usuario/verificar-correo.component'; 
-import { MovieListComponent } from './movie-list/movie-list.component';
-import { MovieCreateComponent } from './movie-create/movie-create.component';
-import { MovieEditComponent } from './movie-edit/movie-edit.component';
-import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MainComponent } from './components/main/main.component'; 
+import { EditMovieComponent } from './movies-crud/edit-movie/edit-movie.component';
+import { CreateMovieComponent } from './movies-crud/create-movie/create-movie.component';
+import { MovieListComponent } from './movies-crud/movie-list/movie-list.component';
+import { BuscarUsuariosComponent } from './components/buscar-usuarios/buscar-usuarios.component';
 
 import * as path from 'path';
+import { AgregarUsuarioComponent } from './components/agregar-usuario/agregar-usuario.component';
+
 
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'search', component:SearchComponent},
-  {path:'movie/:id',component:MovieDetailsComponent},
-  { path: '', component: LoginComponent },
+  {path:'movie/:id',component:MovieDetailsComponent}, 
+  { path: '', component: MainComponent },
+  { path: '', redirectTo: '/main', pathMatch: 'full' }, 
+  { path: 'main', component: MainComponent },
+  { path: 'login', component: LoginComponent }, 
   { path: 'registrar-usuario', component: RegistrarUsuarioComponent },     
   { path: 'recuperar-password', component: RecuperarPasswordComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'verificar-usuario', component: VerificarUsuarioComponent },
-  { path: '', component: MovieListComponent },
-  { path: 'create', component: MovieCreateComponent },
-  { path: 'edit/:id', component: MovieEditComponent },
-  { path: 'detail/:id', component: MovieDetailComponent },
+  { path: 'verificar-usuario', component: VerificarUsuarioComponent }, 
+  { path: 'edit-movie', component: EditMovieComponent },
+  { path: 'create-movie', component: CreateMovieComponent },
+  { path: 'movie-list', component: MovieListComponent},
+  { path: 'buscar-usuarios', component: BuscarUsuariosComponent},
+  { path: 'agregar-usuario', component: AgregarUsuarioComponent}
+  
 ];
 
 @NgModule({
@@ -37,6 +45,11 @@ const routes: Routes = [
 })
 export class AppRoutingModule { 
 }
+
+
+
+
+ 
 
 
 

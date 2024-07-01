@@ -1,0 +1,92 @@
+<!-- <div class="container">
+    <h2>Editar Película</h2>
+    <form (ngSubmit)="updateMovie()" *ngIf="movieData">
+      <div class="mb-3">
+        <label for="title" class="form-label">Título</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="movieData.title" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Descripción</label>
+        <textarea class="form-control" id="description" name="description" [(ngModel)]="movieData.description" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="genre" class="form-label">Género</label>
+        <input type="text" class="form-control" id="genre" name="genre" [(ngModel)]="movieData.genre" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Actualizar Película</button>
+    </form>
+  </div>
+   -->
+
+   <!-- <div class="container">
+    <h2>Editar Película</h2>
+  
+
+    <form #idForm="ngForm" (ngSubmit)="getMovieDetails()">
+      <div class="mb-3">
+        <label for="movieId" class="form-label">Ingrese el ID de la Película</label>
+        <input type="text" class="form-control" id="movieId" name="movieId" [(ngModel)]="movieId" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar Película</button>
+    </form>
+  
+  
+    <div *ngIf="movieData">
+      <form (ngSubmit)="updateMovie()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Título</label>
+          <input type="text" class="form-control" id="title" name="title" [(ngModel)]="movieData.title" required>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripción</label>
+          <textarea class="form-control" id="description" name="description" [(ngModel)]="movieData.description" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="genre" class="form-label">Género</label>
+          <input type="text" class="form-control" id="genre" name="genre" [(ngModel)]="movieData.genre" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar Película</button>
+      </form>
+    </div>
+  </div> -->
+
+
+
+  <div class="container">
+    <h2>Editar Película</h2>
+  
+    <!-- Formulario para buscar por nombre de la película -->
+    <form #nameForm="ngForm" (ngSubmit)="getMovieDetails()">
+      <div class="mb-3">
+        <label for="movieName" class="form-label">Ingrese el Nombre de la Película</label>
+        <input type="text" class="form-control" id="movieName" name="movieName" [(ngModel)]="movieName" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar Película</button>
+    </form>
+  
+    <!-- Mostrar los detalles de la película solo si movieData está definido -->
+    <div *ngIf="movieData">
+      <form (ngSubmit)="updateMovie()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Título</label>
+          <input type="text" class="form-control" id="title" name="title" [(ngModel)]="movieData.title" required>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripción</label>
+          <textarea class="form-control" id="description" name="description" [(ngModel)]="movieData.overview" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="genre" class="form-label">Género</label>
+          <input type="text" class="form-control" id="genre" name="genre" [(ngModel)]="movieData.genre" required>
+        </div>
+        <div class="mb-3">
+          <label for="movieUrl" class="form-label">URL de la Película</label>
+          <input type="text" class="form-control" id="movieUrl" name="movieUrl" [(ngModel)]="movieData.movieUrl" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar Película</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  

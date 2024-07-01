@@ -1,8 +1,16 @@
 <div class="wrapper">
-    <div *ngIf="!loading" class="body">
-        <img class="logo" src="../../../assets/contrasena.png" alt="Login">
-        <h4>Registrarse</h4>
+    <div *ngIf="!loading" class="main">
+        <h3 class="title">WACHUKA MOVIES</h3>
+        <h5>Registrarse</h5>
         <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+                <label>Nombre</label>
+                <span *ngIf="registrarUsuario.get('nombre')?.hasError('required') && registrarUsuario.get('nombre')?.touched" class="text-danger errorLabel">
+                  El <strong>nombre</strong> es requerido
+                </span>
+              </div>
+              
             <div class="form-floating mb-3">
                 <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
                 <label>Email</label>
@@ -25,12 +33,12 @@
             </div>
             <div class="form-floating mb-3">
                 <input type="password" class="form-control" formControlName="repetirPassword" placeholder="Repetir Password">
-                <label>Repetir Passowrd</label>
+                <label>Repetir Password</label>
             </div>
             <div class="d-grid gap-2 mb-3">
                 <button class="btn-red-blood" [disabled]="registrarUsuario.invalid" type="submit">Aceptar</button>
             </div>           
-            <a routerLink="">Volver</a>
+            <a routerLink="/login">Volver</a>
             
         </form>
     </div>

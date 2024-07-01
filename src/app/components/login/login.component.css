@@ -1,43 +1,140 @@
-/* You can add global styles to this file, and also import other style files */
-.html, body {
-  height: 100%;
-}
+
 
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  margin-top: 5%;
-
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  background-size: cover;
+  overflow-x: hidden;
+  animation: fadeInBackground 1.5s ease-in-out forwards;
 }
 
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Style for the logo */
 .logo {
   height: 130px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  animation: bounceIn 1s ease;
 }
 
-.body {
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Style for the main container */
+.main {
   width: 100%;
-  max-width: 330px;
+  max-width: 400px;
   margin: auto;
-  padding: 15px;
+  padding: 30px;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideInUp 1s ease;
 }
 
+@keyframes slideInUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Style for form labels */
 .form-floating {
   text-align: start;
+  position: relative;
 }
 
-.errorLabel {
-  margin-left: 5px;
+.form-floating label {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s;
 }
 
-.btn-red-blood {
-  background-color: #8B0000; /* Color rojo de Google */
-  border-color: #8B0000;
+.form-floating input:focus + label {
   color: white;
 }
 
+.form-floating input {
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s, background-color 0.3s;
+}
 
+.form-floating input:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: white;
+}
 
+/* Style for error labels */
+.errorLabel {
+  margin-left: 5px;
+  color: #8B0000;
+}
+
+/* Style for buttons */
+.btn-red-blood {
+  background-color: #8B0000;
+  border-color: #8B0000;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.btn-red-blood:hover {
+  background-color: #8B0000;
+  border-color: #8B0000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.btn-red-blood:active {
+  transform: scale(0.95);
+}
+
+/* Additional styling for links */
+a {
+  color: #8B0000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #8B0000;
+  text-decoration: underline;
+}
+
+.title {
+  font-family: 'Impact', sans-serif; /* Fuente impactante */
+  color: #8b0000; /* Color sangre */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra al texto */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  padding-bottom: 20px; /* Espaciado inferior */
+  animation: swing 2s infinite alternate; /* Animación swing */
+}
+
+@keyframes swing {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(30px); /* Cambia la distancia de la animación */
+  }
+}

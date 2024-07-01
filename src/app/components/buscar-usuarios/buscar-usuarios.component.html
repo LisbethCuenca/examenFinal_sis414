@@ -1,0 +1,58 @@
+<div class="main">
+    <div class="main">
+        <h3 class="title">WACHUKA MOVIES</h3>
+        <h5>Usuarios</h5>
+        <div class="search">
+            <input type="text" [(ngModel)]="busqueda" (input)="filtrarUsuarios()" placeholder="Buscar por nombre"
+                class="form-control" >
+            <button class="btn btn-sm btn-danger" type="button" (click)="buscar()">Buscar</button>
+            <a class="nav-link" routerLink="/agregar-usuario">Agregar Usuarios</a>
+        </div> <!-- list-group-item -->
+        <ul class="list-group">
+            <li class="card" *ngFor="let usuario of usuariosFiltrados">
+                <div>
+                    <strong>Nombre:</strong> {{ usuario.nombre }}
+                </div>
+                <div>
+                    <strong>Email:</strong> {{ usuario.email }}
+                </div>
+                <div>
+                    <strong>UID:</strong> {{ usuario.uid }}
+                </div>
+                <div class="mt-2">
+                    <button class="btn btn-sm btn-primary me-2" (click)="editarUsuario(usuario)">Editar</button>
+                    <button class="btn btn-sm btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+                </div>
+            </li>
+            <li *ngIf="usuariosFiltrados.length === 0 && busqueda !== ''" class="list-group-item text-danger">
+                No se encontraron usuarios con el nombre "{{ busqueda }}"
+            </li>
+            <li *ngIf="usuariosFiltrados.length === 0 && busqueda === ''" class="list-group-item text-danger">
+                No se han encontrado usuarios
+            </li>
+        </ul>
+    </div>
+
+    <!-- <div class="main-2">
+        <h5>Agregar Nuevo Usuario</h5>
+        <form (ngSubmit)="agregarUsuario()" #formulario="ngForm" class="card">
+            <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="nuevoUsuario.nombre"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="form-control" [(ngModel)]="nuevoUsuario.email"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="uid">UID</label>
+                <input type="text" id="uid" name="uid" class="form-control" [(ngModel)]="nuevoUsuario.uid" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+        </form>
+    </div>
+</div> -->
+
+

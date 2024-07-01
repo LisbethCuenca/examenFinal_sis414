@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Crear Nueva Película</h2>
+    <form #movieForm="ngForm" (ngSubmit)="createMovie(movieForm)">
+      <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" id="title" class="form-control" name="title" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="description">Descripción</label>
+        <textarea id="description" class="form-control" name="description" ngModel required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="director">Director</label>
+        <input type="text" id="director" class="form-control" name="director" ngModel required>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Crear</button>
+    </form>
+  </div>
+  

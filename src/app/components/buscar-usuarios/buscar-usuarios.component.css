@@ -1,0 +1,147 @@
+/* Estilo para el contenedor principal */
+.container {
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: auto; /* Centrar el contenedor horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    width: 50%;
+    
+ }
+
+ .search {
+    position: relative;
+    display: inline-block;
+    width: 91%;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .search .input-group {
+    position: relative;
+   
+  }
+  
+  .search input {
+    padding-right: 100px; /* Ajusta el padding derecho para dejar espacio al botón */
+  }
+  
+  .search button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 6vh;
+    z-index: 1;
+    background-color: #dc3545;
+  }
+
+ .main{
+    background-color: white;
+    height: 100%;
+    margin-top: 0%;
+    padding-top: 0%;
+    width: 100%;
+ }
+
+ .main-2{
+    background-color: white;
+    height: 100vh 
+ }
+
+ .card{
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 10px;
+    padding: 20px;
+ }
+
+ .title {
+    font-family: 'Impact', sans-serif; /* Fuente impactante */
+    color: #8b0000; /* Color sangre */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra al texto */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    padding-top: 20px; /* Espaciado inferior */
+    animation: swing 2s infinite alternate; /* Animación swing */
+    margin-left: 60px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  @keyframes swing {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(30px); /* Cambia la distancia de la animación */
+    }
+  }
+ 
+  
+  /* Estilo para el título de sección */
+  h5 {
+    font-size: 1.5rem; /* Tamaño de fuente */
+    margin-bottom: 1rem; /* Espacio inferior */
+    margin-left: 60px;
+  }
+  
+  /* Estilo para el grupo de entrada y botón de búsqueda */
+  .input-group {
+    margin-bottom: 1rem; /* Espacio inferior */
+  }
+  
+  /* Estilo para el campo de entrada */
+  .form-control {
+    border-radius: 0; /* Bordes sin redondeo */
+    border-color: #ccc; /* Color del borde */
+  }
+  
+  /* Estilo para el botón de búsqueda */
+  .btn-outline-secondary {
+    border-radius: 0; /* Bordes sin redondeo */
+  }
+  
+  /* Estilo para la lista de usuarios */
+  .list-group {
+    margin-top: 1rem; /* Espacio superior */
+  }
+  
+  /* Estilo para cada elemento de usuario */
+  .list-group-item {
+    border-color: #ddd; /* Color del borde */
+    margin-top: 10px; /* Espacio superior */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  /* Estilo para usuarios destacados */
+  .usuario-destacado {
+    background-color: #f0f0f0; /* Fondo de color para destacar */
+  }
+  
+  /* Estilo para mensajes de texto sin usuarios */
+  .text-danger {
+    font-style: italic; /* Estilo de fuente cursiva */
+  }
+  
+  
+  .btn {
+    margin-left: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+  }
+  
+
+  .usuario-destacado {
+    background-color: #f0f0f0; /* Ejemplo de color de fondo destacado */
+    /* Otros estilos de resaltado según sea necesario */
+  }
+  
+  

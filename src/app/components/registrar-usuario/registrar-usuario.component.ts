@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/* import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastrService } from 'ngx-toastr';
@@ -64,6 +64,150 @@ export class RegistrarUsuarioComponent implements OnInit {
           'Le enviamos un correo electronico para su verificacion',
           'Verificar correo'
         );
+        this.router.navigate(['/login']);
+      });
+  }
+  
+}
+ */
+
+
+
+
+
+
+
+
+/* import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { FirebaseCodeErrorService } from 'src/app/service/firebase-code-error.service';
+
+@Component({
+  selector: 'app-registrar-usuario',
+  templateUrl: './registrar-usuario.component.html',
+  styleUrls: ['./registrar-usuario.component.css'],
+})
+export class RegistrarUsuarioComponent implements OnInit {
+  registrarUsuario: FormGroup;
+  loading: boolean = false;
+
+  constructor(
+    private fb: FormBuilder,
+    private afAuth: AngularFireAuth,
+    private firestore: AngularFirestore,
+    private toastr: ToastrService,
+    private router: Router,
+    private firebaseError: FirebaseCodeErrorService
+  ) {
+    this.registrarUsuario = this.fb.group({
+      nombre: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      repetirPassword: ['', Validators.required],
+    });
+  }
+
+  ngOnInit(): void {}
+
+  registrar() {
+    const { nombre, email, password, repetirPassword } = this.registrarUsuario.value;
+    
+    if (password !== repetirPassword) {
+      this.toastr.error('Las contraseñas deben coincidir', 'Error');
+      return;
+    }
+
+    this.loading = true;
+    this.afAuth.createUserWithEmailAndPassword(email, password)
+      .then(async (result) => {
+        await result.user?.updateProfile({ displayName: nombre });
+        this.firestore.collection('users').add({ uid: result.user?.uid, nombre, email });
+        this.verificarCorreo();
+      })
+      .catch((error) => {
+        this.loading = false;
+        this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
+      });
+  }
+
+  verificarCorreo() {
+    this.afAuth.currentUser
+      .then((user) => user?.sendEmailVerification())
+      .then(() => {
+        this.toastr.info('Le enviamos un correo electrónico para su verificación', 'Verificar correo');
+        this.router.navigate(['/login']);
+      });
+  }
+}
+ */
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { FirebaseCodeErrorService } from 'src/app/service/firebase-code-error.service';
+
+@Component({
+  selector: 'app-registrar-usuario',
+  templateUrl: './registrar-usuario.component.html',
+  styleUrls: ['./registrar-usuario.component.css'],
+})
+export class RegistrarUsuarioComponent implements OnInit {
+  registrarUsuario: FormGroup;
+  loading: boolean = false;
+
+  constructor(
+    private fb: FormBuilder,
+    private afAuth: AngularFireAuth,
+    private firestore: AngularFirestore,
+    private toastr: ToastrService,
+    private router: Router,
+    private firebaseError: FirebaseCodeErrorService
+  ) {
+    this.registrarUsuario = this.fb.group({
+      nombre: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      repetirPassword: ['', Validators.required],
+    });
+  }
+
+  ngOnInit(): void {}
+
+  registrar() {
+    const { nombre, email, password, repetirPassword } = this.registrarUsuario.value;
+    
+    if (password !== repetirPassword) {
+      this.toastr.error('Las contraseñas deben coincidir', 'Error');
+      return;
+    }
+
+    this.loading = true;
+    this.afAuth.createUserWithEmailAndPassword(email, password)
+      .then(async (result) => {
+        await result.user?.updateProfile({ displayName: nombre });
+        this.firestore.collection('users').add({ uid: result.user?.uid, nombre, email });
+        this.verificarCorreo();
+      })
+      .catch((error) => {
+        this.loading = false;
+        this.toastr.error(this.firebaseError.codeError(error.code), 'Error');
+      });
+  }
+
+  verificarCorreo() {
+    this.afAuth.currentUser
+      .then((user) => user?.sendEmailVerification())
+      .then(() => {
+        this.toastr.info('Le enviamos un correo electrónico para su verificación', 'Verificar correo');
         this.router.navigate(['/login']);
       });
   }

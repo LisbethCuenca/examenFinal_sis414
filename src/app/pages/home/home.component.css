@@ -1,34 +1,10 @@
-.carousel-inner
-{
-    height: 700px;
-}
-
-.carousel-inner .carousel-item img
-{
-    height: 700px;
-    object-fit: cover;
-}
-
-.carousel-caption h2
-{
-    color: #E50914;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.carousel-caption p 
-{
-    color: #ffffff;
-}
-
-.rowposter{
+.rowposter {
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
 }
 
-.rowimg
-{
+.rowimg {
     max-height: 100px;
     object-fit: contain;
     width: 100%;
@@ -37,29 +13,34 @@
     margin-right: 7px;
 }
 
-.rowimg:hover
-{
+.rowimg:hover {
     transform: scale(1.09);
     cursor: pointer;
 }
 
-.largeposter{
+.largeposter {
     max-height: 300px;
 }
 
-.rowposter::-webkit-scrollbar
-{
+.rowposter::-webkit-scrollbar {
     display: none;
 }
-.navbar .navbar-brand
-{
+
+.navbar .navbar-brand {
     color: #E50914;
     font-weight: bold;
     display: flex;
 }
 
-.navbar-nav .nav-item .nav-link
-{
+.navbar-nav .nav-item .nav-link {
     color: #E50914;
 }
 
+.navbar{
+    background-color: black;
+    height: 40px;
+    
+  
+    
+
+}

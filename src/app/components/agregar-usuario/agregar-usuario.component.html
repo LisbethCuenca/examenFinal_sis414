@@ -1,0 +1,25 @@
+<div class="main">
+    <div class="main-2">
+      <h5>Agregar Nuevo Usuario</h5>
+      <form (ngSubmit)="agregarUsuario()" #formulario="ngForm" class="card">
+        <div class="mb-3">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="nuevoUsuario.nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" class="form-control" [(ngModel)]="nuevoUsuario.email" required>
+        </div>
+        <div class="mb-3">
+          <label for="uid">UID</label>
+          <input type="text" id="uid" name="uid" class="form-control" [(ngModel)]="nuevoUsuario.uid" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+      </form>
+      <div *ngIf="mensajeAgregado" class="alert alert-success mt-3">
+        Usuario agregado correctamente.
+      </div>
+    </div>
+    <a class="nav-link" routerLink="/buscar-usuarios">Volver</a>
+  </div>
+  
